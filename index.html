@@ -61,12 +61,12 @@ AccountKit.login('PHONE', {countryCode: '+91'},
             console.log(response);
         }
         else if (response.status === "NOT_AUTHENTICATED") {
-            window.postMessage(JSON.stringify({loggedIn:false, token: response.code, state: response.state, status: response.status}));
+            window.postMessage(JSON.stringify({loggedIn:false, status: response.status}));
             console.log("Failure Response: ");
             console.log(response);
         }
         else if (response.status === "BAD_PARAMS") {
-            window.postMessage(JSON.stringify({loggedIn:false, token: response.code, state: response.state, status: response.status}));
+            window.postMessage(JSON.stringify({loggedIn:false, status: response.status}));
             console.log("Bad Param Response: ");
             console.log(response);
         }
