@@ -53,7 +53,7 @@ function loadAccountKit()
         fbAppEventsEnabled: true
     }
 );
-AccountKit.login('PHONE', {},
+AccountKit.login('PHONE', {countryCode: '+91'},
     function (response) {
         if (response.status === "PARTIALLY_AUTHENTICATED") {
             window.postMessage(JSON.stringify({loggedIn:true}));
